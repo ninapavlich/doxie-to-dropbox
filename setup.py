@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'doxietodropbox',
-    version = '0.4',
+    version = '0.5',
     author = 'Nina Pavlich',
     author_email='nina@ninalp.com',
     url = 'https://github.com/ninapavlich/doxie-to-dropbox',
@@ -15,6 +15,7 @@ setup(
     install_requires=[
         'Pillow',
         'doxieautomator',
+        'dropbox'
     ],
     
     classifiers=[

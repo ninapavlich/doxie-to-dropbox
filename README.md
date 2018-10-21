@@ -25,8 +25,8 @@ To run:
 To install as a background script:
 
 	pip install doxietodropbox
-	cp /usr/local/lib/python2.7/site-packages/doxietodropbox/example.env ~/dropboxtodoxie.conf
+	cp /home/username/.local/lib/python2.7/site-packages/doxietodropbox/example.env ~/dropboxtodoxie.conf
 	vi ~/dropboxtodoxie.conf
-	cp /usr/local/lib/python2.7/site-packages/doxietodropbox/example.service /etc/init/doxietodropbox.conf
+	cp /home/username/.local/lib/python2.7/site-packages/doxietodropbox/example.service /etc/init/doxietodropbox.conf
 	sudo initctl reload-configuration
 	sudo start doxietodropbox

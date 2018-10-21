@@ -4,6 +4,6 @@ author  "Nina Pavlich <nina@ninalp.com>"
 start on runlevel [234]
 stop on runlevel [0156]
 
-chdir /usr/local/lib/python2.7/site-packages/doxietodropbox/
-exec /usr/local/lib/python2.7/site-packages/doxietodropbox/service.py
+chdir /home/username/.local/lib/python2.7/site-packages/doxietodropbox/
+exec python /home/username/.local/lib/python2.7/site-packages/doxietodropbox/service.py
 respawn
