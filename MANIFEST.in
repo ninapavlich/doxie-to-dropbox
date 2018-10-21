@@ -1,6 +1,4 @@
-include ./README.md
-include ./LICENSE
-include ./setup.py
-include ./example.env
-include ./example.service
-recursive-include doxietodropbox/ *.py *.env *.service
+include README.md
+include LICENSE
+include doxietodropbox/*.py
+include doxietodropbox/example.*
