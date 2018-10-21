@@ -2,6 +2,9 @@ import os
 import sys
 import copy
 import re
+import logging
+from shutil import copyfile
+
 
 """
 Managing Django Environment Variables
@@ -45,11 +48,31 @@ def read(env_file=".env"):
             os.environ.setdefault(key, val)
 
 # -- Read .env Variables
-# env.read("%s/.env" % os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir)))
-read(env_file=".env")
+if 'DROPBOX_TO_DOXIE_CONFIG' in os.environ:
+    config_file = os.environ["DROPBOX_TO_DOXIE_CONFIG"]
+else:
+    from os.path import expanduser
+    home = expanduser("~")
+    config_file = os.path.join(home, "dropboxtodoxie.conf")
+    if not os.path.exists(config_file):
+        logging.error("WARNING: Please edit the dropbox-to-doxie config file, located at %s, and then re-run this script. Script will not work correctly until this is done."%(config_file))
+        config_template = os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), "example.env")
+        copyfile(config_template, config_file)
+        sys.exit()
+
+
+read(env_file=config_file)
+    
+        
+
+
 
 DOXIE_SERVER = get("DOXIE_SERVER")
 DOXIE_USERNAME = get("DOXIE_USERNAME")
 DOXIE_PASSWORD = get("DOXIE_PASSWORD")
 DOXIE_FOLDER = get("DOXIE_FOLDER")
 DROPBOX_ACCESS_TOKEN = get("DROPBOX_ACCESS_TOKEN")
+
+if not DROPBOX_ACCESS_TOKEN:
+    logging.error("WARNING: Dropbox access token was left empty in the config file, located at %s. Please add your dropbox access token and re-run this script."%(config_file))
+    sys.exit()    

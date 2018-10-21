@@ -1,12 +1,12 @@
 import time
 import logging
+import os
 
+os.environ["DROPBOX_TO_DOXIE_CONFIG"] = ".env"
 from doxietodropbox.doxie import DoxieToDropbox
 
 logging.basicConfig(level=logging.INFO,
     format='%(asctime)s %(module)s %(name)s.%(funcName)s +%(lineno)s: %(levelname)-8s [%(process)d] %(message)s')
-
-
 
 if __name__ == "__main__":
     import time

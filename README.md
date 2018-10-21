@@ -20,3 +20,13 @@ To run:
     pip install -r requirements.txt
 
 5) Run "python main.py" 
+
+
+To install as a background script:
+
+	pip install doxietodropbox
+	cp (todo)/example.env ~/dropboxtodoxie.conf
+	vi ~/dropboxtodoxie.conf
+	cp (todo)/example.service doxietodropbox.conf
+	sudo initctl reload-configuration
+	sudo start doxietodropbox

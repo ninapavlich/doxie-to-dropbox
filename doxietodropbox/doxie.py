@@ -20,7 +20,7 @@ class DoxieToDropbox(SingleInstance):
     client = None
 
     def initialize(self):
-        self.log("initialize()")
+        
         self.log(u"Looking for Doxie on %s"%(settings.DOXIE_SERVER))
 
         self.client = dropbox.Dropbox(settings.DROPBOX_ACCESS_TOKEN)
@@ -33,7 +33,6 @@ class DoxieToDropbox(SingleInstance):
         
 
     def loop(self):
-        self.log("loop()")
         self.doxie.loop()
         self.check_dir_for_new_files()
 

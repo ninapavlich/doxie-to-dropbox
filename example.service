@@ -1,0 +1,9 @@
+description "Doxie to Dropbox"
+author  "Nina Pavlich <nina@ninalp.com>"
+
+start on runlevel [234]
+stop on runlevel [0156]
+
+chdir /app/file/bin
+exec /app/file/bin/script.py
+respawn
