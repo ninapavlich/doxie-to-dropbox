@@ -10,7 +10,7 @@ To run:
 
 1) Clone this repository
 
-3) Rename example.env to .env and update the DOXIE_USERNAME, DOXIE_PASSWORD and DOXIE_FOLDER, DROPBOX_ACCESS_TOKEN
+3) Copy doxietodropbox/example.env to .env at the root of the project and update the DOXIE_USERNAME, DOXIE_PASSWORD and DOXIE_FOLDER, DROPBOX_ACCESS_TOKEN
 
 4) Create a virtual environment and install requirements with pip
 	
@@ -25,8 +25,8 @@ To run:
 To install as a background script:
 
 	pip install doxietodropbox
-	cp (todo)/example.env ~/dropboxtodoxie.conf
+	cp /usr/local/lib/python2.7/site-packages/doxietodropbox/example.env ~/dropboxtodoxie.conf
 	vi ~/dropboxtodoxie.conf
-	cp (todo)/example.service doxietodropbox.conf
+	cp /usr/local/lib/python2.7/site-packages/doxietodropbox/example.service doxietodropbox.conf
 	sudo initctl reload-configuration
 	sudo start doxietodropbox

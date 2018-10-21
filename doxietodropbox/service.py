@@ -4,7 +4,7 @@ import os
 import sys
 from logging.handlers import RotatingFileHandler
 
-from doxietodropbox.doxie import DoxieToDropbox
+from doxie import DoxieToDropbox
 
 LOG_FILE_PATH = os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), "doxietodropbox.log")
 handler = RotatingFileHandler(LOG_FILE_PATH, maxBytes=2000, backupCount=10)
