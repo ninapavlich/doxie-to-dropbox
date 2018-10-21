@@ -3,3 +3,5 @@ include LICENSE
 include example.env
 include example.service
 include doxietodropbox/*.py
+include doxietodropbox/*.env
+include doxietodropbox/*.service
